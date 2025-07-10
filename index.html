@@ -27,18 +27,15 @@
             height: 100vh;
             background: #F8EDEA;
             position: relative;
+            padding: 20px;
         }
 
         /* Main Window */
         .window {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            right: 20px;
-            bottom: 20px;
+            width: 100%;
+            height: 100%;
             background: #F8EDEA;
-            border: 4px solid;
-            border-color: #ffffff #808080 #808080 #ffffff;
+            border: 4px solid #0000ff;
             display: flex;
             flex-direction: column;
         }
@@ -51,62 +48,61 @@
 
         /* Sidebar */
         .sidebar {
-            width: 240px;
+            width: 200px;
             background: #F8EDEA;
-            border-right: 6px solid #0000ff;
+            border-right: 4px solid #0000ff;
             display: flex;
             flex-direction: column;
             padding: 1rem;
+            gap: 1rem;
         }
 
         .logo {
-            width: 120px;
-            height: 120px;
+            width: 80px;
+            height: 80px;
             background: #0000ff;
-            border: 2px solid;
-            border-color: #ffffff #0000ff #0000ff #ffffff;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 4rem;
+            font-size: 2rem;
             font-weight: 700;
             font-family: 'Source Code Pro', monospace;
             color: #C1FF5D;
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
         }
 
         .nav-menu {
             list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
         }
 
         .nav-item {
-            margin-bottom: 0.5rem;
+            margin: 0;
         }
 
         .nav-link {
             display: block;
             padding: 0.8rem 1rem;
-            background: #F8EDEA;
-            border: 4px solid;
-            border-color: #ffffff #0000ff #0000ff #ffffff;
+            background: #0000ff;
             text-decoration: none;
-            color: #0000ff;
+            color: #F8EDEA;
             font-weight: 600;
             font-family: 'Source Code Pro', monospace;
             cursor: pointer;
             transition: all 0.1s ease;
+            text-align: left;
         }
 
         .nav-link:hover {
-            border-color: #0000ff #ffffff #ffffff #0000ff;
             background: #C1FF5D;
             color: #0000ff;
         }
 
         .nav-link.active {
-            border-color: #0000ff #ffffff #ffffff #0000ff;
             background: #0000ff;
-            color: #C1FF5D;
+            color: #F8EDEA;
         }
 
         /* Main Content */
@@ -114,22 +110,30 @@
             flex: 1;
             overflow-y: auto;
             background: #F8EDEA;
+            display: flex;
+            flex-direction: column;
         }
 
         .binary-header {
-            background: #0000ff;
-            color: #C1FF5D;
-            padding: 0.3rem 0.5rem;
+            background: #F8EDEA;
+            color: #0000ff;
+            padding: 0.5rem;
             font-family: 'Source Code Pro', monospace;
             font-size: 18px;
             line-height: 1.4;
             overflow: hidden;
             white-space: nowrap;
-            border-bottom: 2px solid #0000ff;
+            border-bottom: 4px solid #0000ff;
+        }
+
+        .content-area {
+            flex: 1;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
         }
 
         .content-section {
-            padding: 2rem;
             display: none;
         }
 
@@ -137,116 +141,38 @@
             display: block;
         }
 
-        .section-title {
-            font-size: 2.5rem;
+        .main-title {
+            font-size: 3rem;
             font-weight: 700;
             font-family: 'Source Code Pro', monospace;
             color: #0000ff;
-            margin-bottom: 1rem;
-        }
-
-        .section-subtitle {
-            font-size: 1rem;
-            font-family: 'Source Code Pro', monospace;
-            color: #666;
             margin-bottom: 2rem;
         }
 
-        /* Content Cards */
-        .content-card {
-            background: #F8EDEA;
-            border: 4px solid;
-            border-color: #ffffff #0000ff #0000ff #ffffff;
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .card-title {
-            font-size: 1.2rem;
-            font-weight: 700;
+        .main-description {
+            font-size: 1.1rem;
             font-family: 'Source Code Pro', monospace;
             color: #0000ff;
-            margin-bottom: 0.5rem;
+            line-height: 1.6;
+            max-width: 600px;
         }
 
-        .card-subtitle {
-            font-size: 1rem;
-            font-family: 'Source Code Pro', monospace;
-            color: #0000ff;
-            margin-bottom: 0.5rem;
-        }
-
-        .card-meta {
-            font-size: 0.9rem;
-            font-family: 'Source Code Pro', monospace;
-            color: #666;
-            margin-bottom: 1rem;
-        }
-
-        .card-description {
-            line-height: 1.5;
-            font-family: 'Source Code Pro', monospace;
-            color: #0000ff;
-        }
-
-        .card-description ul {
-            margin-left: 1.5rem;
-            margin-top: 0.5rem;
-        }
-
-        /* Skills Grid */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .skill-category {
-            background: #F8EDEA;
-            border: 4px solid;
-            border-color: #ffffff #0000ff #0000ff #ffffff;
-            padding: 1rem;
-        }
-
-        .skill-title {
-            font-weight: 700;
-            font-family: 'Source Code Pro', monospace;
-            color: #0000ff;
-            margin-bottom: 0.5rem;
-        }
-
-        .skill-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.3rem;
-        }
-
-        .skill-tag {
-            background: #b0b0b0;
-            border: 1px solid #808080;
-            padding: 0.2rem 0.5rem;
-            font-size: 0.8rem;
-            font-family: 'Source Code Pro', monospace;
-            color: #0000ff;
-        }
-
-        /* Projects Grid */
-        .projects-grid {
+        /* Project Cards */
+        .project-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1rem;
-            margin-top: 1rem;
+            gap: 1.5rem;
+            margin-top: 2rem;
         }
 
         .project-card {
             background: #F8EDEA;
-            border: 4px solid;
-            border-color: #ffffff #0000ff #0000ff #ffffff;
+            border: 2px solid #0000ff;
             padding: 1.5rem;
         }
 
         .project-title {
+            font-size: 1.2rem;
             font-weight: 700;
             font-family: 'Source Code Pro', monospace;
             color: #0000ff;
@@ -260,39 +186,46 @@
             margin-bottom: 1rem;
         }
 
-        /* Contact Links */
-        .contact-links {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .contact-link {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 1rem;
-            background: #b0b0b0;
-            border: 4px solid;
-            border-color: #ffffff #0000ff #0000ff #ffffff;
-            text-decoration: none;
-            color: #0000ff;
-            font-weight: 600;
+        .project-description {
+            line-height: 1.5;
             font-family: 'Source Code Pro', monospace;
+            color: #0000ff;
         }
 
-        .contact-link:hover {
-            border-color: #0000ff #ffffff #ffffff #0000ff;
+        /* Playground specific styles */
+        .playground-container {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .demo-box {
+            background: #F8EDEA;
+            border: 2px solid #0000ff;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .demo-button {
+            background: #0000ff;
+            color: #F8EDEA;
+            border: none;
+            padding: 1rem 2rem;
+            font-family: 'Source Code Pro', monospace;
+            font-weight: 600;
+            cursor: pointer;
+            margin: 0.5rem;
+        }
+
+        .demo-button:hover {
+            background: #C1FF5D;
+            color: #0000ff;
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            .window {
-                top: 10px;
-                left: 10px;
-                right: 10px;
-                bottom: 10px;
+            .desktop {
+                padding: 10px;
             }
             
             .window-content {
@@ -302,39 +235,23 @@
             .sidebar {
                 width: 100%;
                 border-right: none;
-                border-bottom: 6px solid #0000ff;
+                border-bottom: 4px solid #0000ff;
                 padding: 1rem;
             }
             
-            .logo {
-                width: 80px;
-                height: 80px;
-                font-size: 1.5rem;
-            }
-            
             .nav-menu {
-                display: flex;
-                gap: 0.5rem;
+                flex-direction: row;
                 flex-wrap: wrap;
             }
             
-            .nav-item {
-                margin-bottom: 0;
-            }
-            
-            .skills-grid, .projects-grid, .contact-links {
-                grid-template-columns: 1fr;
+            .main-title {
+                font-size: 2rem;
             }
         }
 
-        /* Terminal cursor blink animation */
+        /* Typing cursor animation */
         .cursor {
             animation: blink 1s infinite;
-            color: #C1FF5D;
-        }
-
-        .typing-cursor {
-            animation: blink 0.7s infinite;
             color: #0000ff;
         }
 
@@ -342,39 +259,11 @@
             0%, 50% { opacity: 1; }
             51%, 100% { opacity: 0; }
         }
-
-        /* Scrollbar styling */
-        .main-content::-webkit-scrollbar {
-            width: 16px;
-        }
-
-        .main-content::-webkit-scrollbar-track {
-            background: #F8EDEA;
-            border: 4px solid;
-            border-color: #ffffff #0000ff #0000ff #ffffff;
-        }
-
-        .main-content::-webkit-scrollbar-thumb {
-            background: #808080;
-            border: 4px solid;
-            border-color: #ffffff #0000ff #0000ff #ffffff;
-        }
-
-        .main-content::-webkit-scrollbar-thumb:hover {
-            background: #606060;
-        }
     </style>
 </head>
 <body>
     <div class="desktop">
         <div class="window">
-            <div class="binary-header">
-                <div>0110100001100101011011000110110001101111001000000111011101101111011100100110110001100100001000000110001101101111011011010111000001110101011101000110010101110010001000000110010101101110011001110110100101101110011001010110010101110010001000000110100001100001011100100110010001110111011000010111001001100101</div>
-                <div>0111001001101111011001110111001001100001011011010110110101101001011011100110011100100000011000010111001001100011011010000110100101110100011001010110001101110100011101010111001001100101001000000110000101101001001000000110110101100001011000110110100001101001011011100110010100100000011011000110010101100001</div>
-                <div>0111001001101110011010010110111001100111001000000110100001100001011100100110010001110111011000010111001001100101001000000110100101101110011101000110010101100111011100100110000101110100011010010110111101101110001000000110010101101101011000100110010101100100011001000110010101100100001000000111001101111001</div>
-                <div>0111001001110011011101000110010101101101011100110010000001100100011001010111001101101001011001110110111000100000011001100111000001100111011000010010000001110000011100100110111101100011011001010111001101110011011011110111001000100000011000010111001001100011011010000110100101110100011001010110001101110100</div>
-            </div>
-            
             <div class="window-content">
                 <nav class="sidebar">
                     <div class="logo">CK</div>
@@ -383,277 +272,95 @@
                             <a href="#" class="nav-link active" data-section="about">About</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link" data-section="education">Education</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link" data-section="skills">Skills</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link" data-section="experience">Experience</a>
-                        </li>
-                        <li class="nav-item">
                             <a href="#" class="nav-link" data-section="projects">Projects</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link" data-section="contact">Contact</a>
+                            <a href="#" class="nav-link" data-section="playground">Playground</a>
                         </li>
                     </ul>
                 </nav>
                 
                 <main class="main-content">
-                    <section id="about" class="content-section active">
-                        <h1 class="section-title" id="helloWorldText"></h1>
-                        <p class="section-subtitle">Computer Engineering Student passionate about hardware systems and innovation.</p>
-                        
-                        <div class="content-card">
-                            <div class="card-title">Caroline J. Kerr</div>
-                            <div class="card-subtitle">B.S. Computer Engineering Student</div>
-                            <div class="card-meta">Georgia Institute of Technology | Expected Graduation May 2026</div>
-                            <div class="card-description">
-                                Welcome to my digital portfolio! I'm a passionate Computer Engineering student at Georgia Tech, 
-                                specializing in Computing Hardware & Emerging Architectures and Distributed Systems & Software Design. 
+                    <div class="binary-header">
+                        <div>0110100001100101011011000110110001101111001000000111011101101111011100100110110001100100001000000110001101101111011011010111000001110101011101000110010101110010001000000110010101101110011001110110100101101110011001010110010101110010001000000110100001100001011100100110010001110111011000010111001001100101</div>
+                        <div>0111001001101111011001110111001001100001011011010110110101101001011011100110011100100000011000010111001001100011011010000110100101110100011001010110001101110100011101010111001001100101001000000110000101101001001000000110110101100001011000110110100001101001011011100110010100100000011011000110010101100001</div>
+                        <div>0111001001101110011010010110111001100111001000000110100001100001011100100110010001110111011000010111001001100101001000000110100101101110011101000110010101100111011100100110000101110100011010010110111101101110001000000110010101101101011000100110010101100100011001000110010101100100001000000111001101111001</div>
+                        <div>0111001001110011011101000110010101101101011100110010000001100100011001010111001101101001011001110110111000100000011001100111000001100111011000010010000001110000011100100110111101100011011001010111001101110011011011110111001000100000011000010111001001100011011010000110100101110100011001010110001101110100</div>
+                    </div>
+                    
+                    <div class="content-area">
+                        <section id="about" class="content-section active">
+                            <h1 class="main-title" id="helloWorldText"></h1>
+                            <div class="main-description">
+                                Thanks for stopping by! My name is Caroline Kerr, and I'm passionate about making things.
                                 <br><br>
-                                My experience spans from embedded systems programming to AI ASIC integration, with hands-on work 
-                                at industry leaders like AMD, Delta Airlines, and an upcoming internship at Meta Technologies. 
-                                I thrive on solving complex hardware-software integration challenges and pushing the boundaries 
-                                of what's possible in modern computing systems.
+                                I'm a Computer Engineering student at Georgia Tech, specializing in Computing Hardware & Emerging Architectures and Distributed Systems & Software Design. My experience spans from embedded systems programming to AI ASIC integration, with hands-on work at industry leaders like AMD, Delta Airlines, and an upcoming internship at Meta Technologies.
                                 <br><br>
-                                When I'm not debugging PCB designs or optimizing GPU algorithms, you'll find me working on 
-                                high-altitude balloon experiments or designing FPGA peripherals for micro-servo control systems.
+                                When I'm not debugging PCB designs or optimizing GPU algorithms, you'll find me working on high-altitude balloon experiments or designing FPGA peripherals for micro-servo control systems.
                                 <span class="cursor">|</span>
                             </div>
-                        </div>
-                    </section>
-                    
-                    <section id="education" class="content-section">
-                        <h1 class="section-title">Education</h1>
-                        <p class="section-subtitle">Academic achievements and coursework.</p>
+                        </section>
                         
-                        <div class="content-card">
-                            <div class="card-title">Georgia Institute of Technology</div>
-                            <div class="card-subtitle">Bachelor of Science in Computer Engineering</div>
-                            <div class="card-meta">Expected Graduation: May 2026 | Atlanta, GA</div>
-                            <div class="card-description">
-                                <strong>Specializations:</strong>
-                                <ul>
-                                    <li>Computing Hardware & Emerging Architectures</li>
-                                    <li>Distributed Systems & Software Design</li>
-                                </ul>
-                                <br>
-                                <strong>Awards & Recognition:</strong>
-                                <ul>
-                                    <li>Georgia Tech Provost Scholar</li>
-                                    <li>College of Engineering Harris Scholar</li>
-                                    <li>Dean's List</li>
-                                </ul>
-                                <br>
-                                <strong>Relevant Coursework:</strong>
-                                Data Structures & Algorithms, Programming Hardware Systems (Embedded Systems), 
-                                Advanced Programming Techniques in Parallel Computing (GPU Programming), 
-                                Digital Design Lab, AI for Robotics, Circuit Analysis, Computer Architecture
-                            </div>
-                        </div>
-                    </section>
-                    
-                    <section id="skills" class="content-section">
-                        <h1 class="section-title">Technical Skills</h1>
-                        <p class="section-subtitle">Programming languages, tools, and hardware expertise.</p>
-                        
-                        <div class="skills-grid">
-                            <div class="skill-category">
-                                <div class="skill-title">Programming Languages</div>
-                                <div class="skill-tags">
-                                    <span class="skill-tag">C/C++</span>
-                                    <span class="skill-tag">Java</span>
-                                    <span class="skill-tag">Python</span>
-                                    <span class="skill-tag">Fortran</span>
-                                    <span class="skill-tag">MATLAB</span>
-                                    <span class="skill-tag">Assembly (ARM, x86)</span>
-                                    <span class="skill-tag">VHDL</span>
-                                    <span class="skill-tag">Verilog</span>
+                        <section id="projects" class="content-section">
+                            <h1 class="main-title">Projects</h1>
+                            <div class="project-grid">
+                                <div class="project-card">
+                                    <div class="project-title">UAV Modeling with Parallel Computing</div>
+                                    <div class="project-tech">C/C++, OpenGL, MPI, CUDA</div>
+                                    <div class="project-description">
+                                        Implemented HPC solution using 16 MPI processes to synchronously calculate and transform 16 UAV's flight trajectory using GPU computing.
+                                    </div>
+                                </div>
+                                
+                                <div class="project-card">
+                                    <div class="project-title">RTL Processor with Expanded Memory</div>
+                                    <div class="project-tech">Verilog, Assembly, ModelSim, Xilinx</div>
+                                    <div class="project-description">
+                                        Designed and implemented single-cycle processor using Verilog RTL with expanded memory module to support RISC-V.
+                                    </div>
+                                </div>
+                                
+                                <div class="project-card">
+                                    <div class="project-title">Elements Embedded Video Game</div>
+                                    <div class="project-tech">C/C++, ARM LPC1768 Microcontroller</div>
+                                    <div class="project-description">
+                                        Programmed interactive game & controller on LPC1768. Interfaced with navigation switches, buttons, IMU sensor tilt controls via SPI protocol.
+                                    </div>
+                                </div>
+                                
+                                <div class="project-card">
+                                    <div class="project-title">Micro-Servo FPGA Peripheral</div>
+                                    <div class="project-tech">Assembly, VHDL, Intel DE-10 FPGA</div>
+                                    <div class="project-description">
+                                        Utilized Intel DE10-Standard FPGA to design peripheral controlling Micro-Servo motor via PWM with three user controlled modes.
+                                    </div>
                                 </div>
                             </div>
-                            
-                            <div class="skill-category">
-                                <div class="skill-title">Software & Libraries</div>
-                                <div class="skill-tags">
-                                    <span class="skill-tag">Linux</span>
-                                    <span class="skill-tag">Git</span>
-                                    <span class="skill-tag">OpenGL</span>
-                                    <span class="skill-tag">CUDA</span>
-                                    <span class="skill-tag">CircuitPython</span>
-                                    <span class="skill-tag">UML</span>
-                                    <span class="skill-tag">MicroStation</span>
-                                    <span class="skill-tag">KiCAD</span>
-                                    <span class="skill-tag">Altera</span>
-                                    <span class="skill-tag">Cadence</span>
-                                    <span class="skill-tag">UVM</span>
+                        </section>
+                        
+                        <section id="playground" class="content-section">
+                            <h1 class="main-title">Playground</h1>
+                            <div class="playground-container">
+                                <div class="demo-box">
+                                    <h3 style="margin-bottom: 1rem; color: #0000ff;">Interactive Demos</h3>
+                                    <button class="demo-button" onclick="runDemo1()">Binary Converter</button>
+                                    <button class="demo-button" onclick="runDemo2()">Color Generator</button>
+                                    <button class="demo-button" onclick="runDemo3()">Random Quote</button>
+                                    <div id="demo-output" style="margin-top: 1rem; min-height: 50px; color: #0000ff;"></div>
+                                </div>
+                                
+                                <div class="demo-box">
+                                    <h3 style="margin-bottom: 1rem; color: #0000ff;">Contact Information</h3>
+                                    <p style="color: #0000ff; line-height: 1.5;">
+                                        📧 ckerr32@gatech.edu<br>
+                                        📱 (610) 312-6887<br>
+                                        💼 <a href="https://www.linkedin.com/in/caroline-j-kerr/" target="_blank" style="color: #0000ff;">LinkedIn Profile</a><br>
+                                        📍 Atlanta, GA
+                                    </p>
                                 </div>
                             </div>
-                            
-                            <div class="skill-category">
-                                <div class="skill-title">Hardware</div>
-                                <div class="skill-tags">
-                                    <span class="skill-tag">STM32</span>
-                                    <span class="skill-tag">LPC1768</span>
-                                    <span class="skill-tag">Arduino</span>
-                                    <span class="skill-tag">PCB Layout</span>
-                                    <span class="skill-tag">Schematic Capture</span>
-                                    <span class="skill-tag">FPGA</span>
-                                    <span class="skill-tag">Timing Analysis</span>
-                                </div>
-                            </div>
-                            
-                            <div class="skill-category">
-                                <div class="skill-title">Equipment</div>
-                                <div class="skill-tags">
-                                    <span class="skill-tag">Multimeters</span>
-                                    <span class="skill-tag">Signal Generators</span>
-                                    <span class="skill-tag">Logic Analyzers</span>
-                                    <span class="skill-tag">Oscilloscopes</span>
-                                    <span class="skill-tag">Power Supply</span>
-                                    <span class="skill-tag">Soldering</span>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                    
-                    <section id="experience" class="content-section">
-                        <h1 class="section-title">Professional Experience</h1>
-                        <p class="section-subtitle">Industry internships and research positions.</p>
-                        
-                        <div class="content-card">
-                            <div class="card-title">Meta Technologies</div>
-                            <div class="card-subtitle">Incoming Hardware Engineering Intern - AI ASIC Integration</div>
-                            <div class="card-meta">May 2025 - Aug 2025 | Menlo Park, CA</div>
-                            <div class="card-description">
-                                Upcoming internship focused on cutting-edge AI ASIC integration and hardware optimization 
-                                for next-generation computing platforms.
-                            </div>
-                        </div>
-                        
-                        <div class="content-card">
-                            <div class="card-title">Advanced Micro Devices (AMD)</div>
-                            <div class="card-subtitle">Server System Platform Design Intern</div>
-                            <div class="card-meta">Aug 2024 - Dec 2024 | Austin, TX</div>
-                            <div class="card-description">
-                                <ul>
-                                    <li>Designed, tested, and debugged PCB-based logic design centered on future server CPU architectures</li>
-                                    <li>Focused on digital and analog design for debug, validation, and testing platform servers</li>
-                                    <li>Debugged board designs to meet performance, function, and quality benchmarks</li>
-                                    <li>Assisted cross-functional teams throughout silicon bring-up process for data center systems</li>
-                                    <li>Developed Python modules to automate routine bring-up checkout procedures via oscilloscope</li>
-                                </ul>
-                            </div>
-                        </div>
-                        
-                        <div class="content-card">
-                            <div class="card-title">Delta Airlines</div>
-                            <div class="card-subtitle">Systems Engineering Intern</div>
-                            <div class="card-meta">Jan 2024 - May 2024 | Atlanta, GA</div>
-                            <div class="card-description">
-                                <ul>
-                                    <li>Developed and tested embedded software in C/C++ and Fortran for real-time operating systems</li>
-                                    <li>Created enterprise tool to optimize system performance by offloading file search to GPU (700% speed increase)</li>
-                                    <li>Co-led hardware design for implementing location spoofing capabilities for pilot iOS application</li>
-                                    <li>Generated over $500,000 from contracts deployed across Boeing 717 and 757 fleets</li>
-                                </ul>
-                            </div>
-                        </div>
-                        
-                        <div class="content-card">
-                            <div class="card-title">Georgia Tech Low-Frequency Lab</div>
-                            <div class="card-subtitle">Undergraduate Researcher - Lightning at the Edge of Space</div>
-                            <div class="card-meta">Jan 2023 - Dec 2023 | Atlanta, GA</div>
-                            <div class="card-description">
-                                <ul>
-                                    <li>Executed comprehensive testing plan for space-resilient hardware and software components</li>
-                                    <li>Used KiCAD to design PCB suite integrating I2C sensors into lightning sensing system</li>
-                                    <li>Utilized C++ and Python to write device drivers for Software Defined Radio data exchange</li>
-                                    <li>Successfully collected atmospheric phenomena data via high-altitude balloon</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </section>
-                    
-                    <section id="projects" class="content-section">
-                        <h1 class="section-title">Featured Projects</h1>
-                        <p class="section-subtitle">Academic and personal technical projects.</p>
-                        
-                        <div class="projects-grid">
-                            <div class="project-card">
-                                <div class="project-title">Unmanned Aerial Vehicle Modeling with Parallel Computing</div>
-                                <div class="project-tech">C/C++, OpenGL, MPI, CUDA | Fall 2023</div>
-                                <div class="card-description">
-                                    Implemented HPC solution using 16 MPI processes to synchronously calculate and transform 
-                                    16 UAV's flight trajectory using GPU computing. Main process responsible for rendering 
-                                    3D scene and distributing control information to individual drone processes.
-                                </div>
-                            </div>
-                            
-                            <div class="project-card">
-                                <div class="project-title">RTL Processor with Expanded Memory</div>
-                                <div class="project-tech">Verilog, Assembly, ModelSim, Xilinx | Spring 2025</div>
-                                <div class="card-description">
-                                    Designed and implemented single-cycle processor using Verilog RTL with expanded memory 
-                                    module to support RISC-V. Synthesized and simulated processor's datapath and control unit 
-                                    with appropriate testbenches.
-                                </div>
-                            </div>
-                            
-                            <div class="project-card">
-                                <div class="project-title">Elements Embedded Video Game</div>
-                                <div class="project-tech">C/C++, ARM LPC1768 Microcontroller | Spring 2023</div>
-                                <div class="card-description">
-                                    Programmed interactive game & controller on LPC1768. Interfaced with navigation switches, 
-                                    buttons, IMU sensor tilt controls via SPI protocol. Employed Keil IDE and Google C++ 
-                                    testing frameworks for functionality testing.
-                                </div>
-                            </div>
-                            
-                            <div class="project-card">
-                                <div class="project-title">Micro-Servo FPGA Peripheral</div>
-                                <div class="project-tech">Assembly, VHDL, Intel DE-10 FPGA, Altera Quartus | Fall 2023</div>
-                                <div class="card-description">
-                                    Utilized Intel DE10-Standard FPGA to design peripheral controlling Micro-Servo motor via PWM. 
-                                    Developed three user controlled modes via opcodes for percent and degree rotation with 
-                                    preset pattern storage functionality.
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                    
-                    <section id="contact" class="content-section">
-                        <h1 class="section-title">Contact Information</h1>
-                        <p class="section-subtitle">Let's connect and discuss opportunities.</p>
-                        
-                        <div class="content-card">
-                            <div class="card-description">
-                                I'm always interested in discussing new opportunities, innovative projects, 
-                                and collaborations in computer engineering and hardware design. 
-                                Feel free to reach out through any of the channels below!
-                            </div>
-                        </div>
-                        
-                        <div class="contact-links">
-                            <a href="mailto:ckerr32@gatech.edu" class="contact-link">
-                                <span>📧</span>
-                                <span>ckerr32@gatech.edu</span>
-                            </a>
-                            <a href="tel:6103126887" class="contact-link">
-                                <span>📱</span>
-                                <span>(610) 312-6887</span>
-                            </a>
-                            <a href="https://www.linkedin.com/in/caroline-j-kerr/" target="_blank" class="contact-link">
-                                <span>💼</span>
-                                <span>LinkedIn Profile</span>
-                            </a>
-                            <div class="contact-link">
-                                <span>📍</span>
-                                <span>Atlanta, GA</span>
-                            </div>
-                        </div>
-                    </section>
+                        </section>
+                    </div>
                 </main>
             </div>
         </div>
@@ -665,33 +372,29 @@
             const text = "Hello World!";
             const element = document.getElementById('helloWorldText');
             
-            // Check if element exists
             if (!element) {
                 console.error('Element with ID helloWorldText not found');
                 return;
             }
             
             let i = 0;
-            element.innerHTML = '<span class="typing-cursor">|</span>';
+            element.innerHTML = '<span class="cursor">|</span>';
             
             function type() {
                 if (i < text.length) {
-                    element.innerHTML = text.slice(0, i + 1) + '<span class="typing-cursor">|</span>';
+                    element.innerHTML = text.slice(0, i + 1) + '<span class="cursor">|</span>';
                     i++;
-                    setTimeout(type, 150); // Adjust speed here (150ms between characters)
+                    setTimeout(type, 150);
                 } else {
-                    // After typing is complete, keep the cursor blinking
-                    element.innerHTML = text + '<span class="typing-cursor">|</span>';
+                    element.innerHTML = text + '<span class="cursor">|</span>';
                 }
             }
             
-            // Start typing after a short delay
             setTimeout(type, 500);
         }
 
         // Navigation functionality
         document.addEventListener('DOMContentLoaded', function() {
-            // Start typing effect
             typeWriter();
             
             const navLinks = document.querySelectorAll('.nav-link');
@@ -701,19 +404,44 @@
                 link.addEventListener('click', function(e) {
                     e.preventDefault();
                     
-                    // Remove active class from all nav links and sections
                     navLinks.forEach(nav => nav.classList.remove('active'));
                     sections.forEach(section => section.classList.remove('active'));
                     
-                    // Add active class to clicked nav link
                     this.classList.add('active');
                     
-                    // Show corresponding section
                     const targetSection = this.getAttribute('data-section');
                     document.getElementById(targetSection).classList.add('active');
                 });
             });
         });
+
+        // Playground demo functions
+        function runDemo1() {
+            const num = Math.floor(Math.random() * 256);
+            const binary = num.toString(2).padStart(8, '0');
+            document.getElementById('demo-output').innerHTML = 
+                `<strong>Binary Converter:</strong><br>Decimal: ${num} → Binary: ${binary}`;
+        }
+
+        function runDemo2() {
+            const colors = ['#FF6B6B', '#4ECDC4', '#45B7D1', '#96CEB4', '#FFEAA7', '#DDA0DD', '#98D8C8'];
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            document.getElementById('demo-output').innerHTML = 
+                `<strong>Random Color:</strong><br><div style="width: 100px; height: 50px; background: ${randomColor}; margin: 10px auto; border: 2px solid #0000ff;"></div>Hex: ${randomColor}`;
+        }
+
+        function runDemo3() {
+            const quotes = [
+                "The best way to predict the future is to invent it. - Alan Kay",
+                "Any sufficiently advanced technology is indistinguishable from magic. - Arthur C. Clarke",
+                "The computer was born to solve problems that did not exist before. - Bill Gates",
+                "Hardware is easy to protect: lock it in a room, chain it to a desk, or buy a spare. - Schneier",
+                "Software is a gas; it expands to fill its container. - Nathan Myhrvold"
+            ];
+            const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+            document.getElementById('demo-output').innerHTML = 
+                `<strong>Engineering Quote:</strong><br><em>"${randomQuote}"</em>`;
+        }
     </script>
 </body>
 </html>
