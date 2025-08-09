@@ -244,3 +244,99 @@ body {
     0%, 50% { opacity: 1; }
     51%, 100% { opacity: 0; }
 }
+
+/* Contact Page Styles */
+.contact-intro {
+    margin-bottom: 2rem;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.contact-card {
+    background: #F8EDEA;
+    border: 2px solid #0000ff;
+    padding: 2rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.contact-card:hover {
+    background: #0000ff;
+    color: #F8EDEA;
+}
+
+.contact-card:hover .contact-title,
+.contact-card:hover .contact-description,
+.contact-card:hover .contact-link {
+    color: #F8EDEA;
+}
+
+.contact-card:hover .pixel-icon {
+    color: #C1FF5D;
+}
+
+.contact-icon {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.pixel-icon {
+    font-family: 'Source Code Pro', monospace;
+    font-weight: 700;
+    color: #0000ff;
+    font-size: 0.8rem;
+    line-height: 1;
+    text-align: center;
+}
+
+.pixel-row {
+    margin: 2px 0;
+}
+
+.contact-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    font-family: 'Source Code Pro', monospace;
+    color: #0000ff;
+    margin-bottom: 0.5rem;
+}
+
+.contact-description {
+    font-size: 0.9rem;
+    font-family: 'Source Code Pro', monospace;
+    color: #666;
+    margin-bottom: 0.8rem;
+    line-height: 1.4;
+}
+
+.contact-link {
+    font-size: 0.9rem;
+    font-weight: 600;
+    font-family: 'Source Code Pro', monospace;
+    color: #0000ff;
+}
+
+.contact-footer {
+    margin-top: 3rem;
+    text-align: center;
+}
+
+/* Contact card responsive adjustments */
+@media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .contact-card {
+        padding: 1.5rem;
+    }
+}
