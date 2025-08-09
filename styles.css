@@ -339,3 +339,124 @@ body {
         padding: 1.5rem;
     }
 }
+
+/* Experience Page Styles */
+.experience-section {
+    margin-bottom: 3rem;
+}
+
+.section-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    font-family: 'Source Code Pro', monospace;
+    color: #0000ff;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #0000ff;
+    padding-bottom: 0.5rem;
+}
+
+.experience-card {
+    background: #F8EDEA;
+    border: 2px solid #0000ff;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.5rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.company-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    font-family: 'Source Code Pro', monospace;
+    color: #0000ff;
+}
+
+.location-date {
+    font-size: 0.9rem;
+    font-family: 'Source Code Pro', monospace;
+    color: #666;
+    font-weight: 600;
+}
+
+.role-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    font-family: 'Source Code Pro', monospace;
+    color: #0000ff;
+    margin-bottom: 0.5rem;
+}
+
+.specialization {
+    font-size: 0.95rem;
+    font-family: 'Source Code Pro', monospace;
+    color: #666;
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+
+.experience-details {
+    font-family: 'Source Code Pro', monospace;
+    color: #0000ff;
+    line-height: 1.5;
+}
+
+.experience-details ul {
+    margin: 0;
+    padding-left: 1.5rem;
+}
+
+.experience-details li {
+    margin-bottom: 0.5rem;
+}
+
+/* Skills Section */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.skill-category {
+    background: #F8EDEA;
+    border: 2px solid #0000ff;
+    padding: 1.5rem;
+}
+
+.skill-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    font-family: 'Source Code Pro', monospace;
+    color: #0000ff;
+    margin-bottom: 0.8rem;
+}
+
+.skill-list {
+    font-family: 'Source Code Pro', monospace;
+    color: #0000ff;
+    line-height: 1.5;
+    font-size: 0.9rem;
+}
+
+/* Experience page responsive adjustments */
+@media (max-width: 768px) {
+    .experience-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+    }
+}
