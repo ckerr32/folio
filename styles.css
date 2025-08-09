@@ -10,14 +10,13 @@ body {
     font-family: 'Source Code Pro', 'Courier New', monospace;
     background: #F8EDEA;
     color: #0000ff;
-    overflow: hidden;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 /* Desktop Environment */
 .desktop {
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     background: #F8EDEA;
     position: relative;
     padding: 20px;
@@ -26,7 +25,7 @@ body {
 /* Main Window */
 .window {
     width: 100%;
-    height: 100%;
+    min-height: calc(100vh - 40px);
     background: #F8EDEA;
     border: 4px solid #0000ff;
     display: flex;
