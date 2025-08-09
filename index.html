@@ -4,262 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Caroline J. Kerr - Computer Engineering</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600;700&display=swap');
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Source Code Pro', 'Courier New', monospace;
-            background: #F8EDEA;
-            color: #0000ff;
-            overflow: hidden;
-            height: 100vh;
-        }
-
-        /* Desktop Environment */
-        .desktop {
-            width: 100vw;
-            height: 100vh;
-            background: #F8EDEA;
-            position: relative;
-            padding: 20px;
-        }
-
-        /* Main Window */
-        .window {
-            width: 100%;
-            height: 100%;
-            background: #F8EDEA;
-            border: 4px solid #0000ff;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .window-content {
-            flex: 1;
-            display: flex;
-            background: #F8EDEA;
-        }
-
-        /* Sidebar */
-        .sidebar {
-            width: 200px;
-            background: #F8EDEA;
-            border-right: 4px solid #0000ff;
-            display: flex;
-            flex-direction: column;
-            padding: 1rem;
-            gap: 1rem;
-        }
-
-        .logo {
-            width: 80px;
-            height: 80px;
-            background: #0000ff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            font-weight: 700;
-            font-family: 'Source Code Pro', monospace;
-            color: #C1FF5D;
-            margin-bottom: 1rem;
-        }
-
-        .nav-menu {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-
-        .nav-item {
-            margin: 0;
-        }
-
-        .nav-link {
-            display: block;
-            padding: 0.8rem 1rem;
-            background: #0000ff;
-            text-decoration: none;
-            color: #F8EDEA;
-            font-weight: 600;
-            font-family: 'Source Code Pro', monospace;
-            cursor: pointer;
-            transition: all 0.1s ease;
-            text-align: left;
-        }
-
-        .nav-link:hover {
-            background: #C1FF5D;
-            color: #0000ff;
-        }
-
-        .nav-link.active {
-            background: #0000ff;
-            color: #F8EDEA;
-        }
-
-        /* Main Content */
-        .main-content {
-            flex: 1;
-            overflow-y: auto;
-            background: #F8EDEA;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .binary-header {
-            background: #F8EDEA;
-            color: #0000ff;
-            padding: 0.5rem;
-            font-family: 'Source Code Pro', monospace;
-            font-size: 18px;
-            line-height: 1.4;
-            overflow: hidden;
-            white-space: nowrap;
-            border-bottom: 4px solid #0000ff;
-        }
-
-        .content-area {
-            flex: 1;
-            padding: 2rem;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .content-section {
-            display: none;
-        }
-
-        .content-section.active {
-            display: block;
-        }
-
-        .main-title {
-            font-size: 3rem;
-            font-weight: 700;
-            font-family: 'Source Code Pro', monospace;
-            color: #0000ff;
-            margin-bottom: 2rem;
-        }
-
-        .main-description {
-            font-size: 1.1rem;
-            font-family: 'Source Code Pro', monospace;
-            color: #0000ff;
-            line-height: 1.6;
-            max-width: 600px;
-        }
-
-        /* Project Cards */
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .project-card {
-            background: #F8EDEA;
-            border: 2px solid #0000ff;
-            padding: 1.5rem;
-        }
-
-        .project-title {
-            font-size: 1.2rem;
-            font-weight: 700;
-            font-family: 'Source Code Pro', monospace;
-            color: #0000ff;
-            margin-bottom: 0.5rem;
-        }
-
-        .project-tech {
-            color: #666;
-            font-size: 0.9rem;
-            font-family: 'Source Code Pro', monospace;
-            margin-bottom: 1rem;
-        }
-
-        .project-description {
-            line-height: 1.5;
-            font-family: 'Source Code Pro', monospace;
-            color: #0000ff;
-        }
-
-        /* Playground specific styles */
-        .playground-container {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-        }
-
-        .demo-box {
-            background: #F8EDEA;
-            border: 2px solid #0000ff;
-            padding: 2rem;
-            text-align: center;
-        }
-
-        .demo-button {
-            background: #0000ff;
-            color: #F8EDEA;
-            border: none;
-            padding: 1rem 2rem;
-            font-family: 'Source Code Pro', monospace;
-            font-weight: 600;
-            cursor: pointer;
-            margin: 0.5rem;
-        }
-
-        .demo-button:hover {
-            background: #C1FF5D;
-            color: #0000ff;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .desktop {
-                padding: 10px;
-            }
-            
-            .window-content {
-                flex-direction: column;
-            }
-            
-            .sidebar {
-                width: 100%;
-                border-right: none;
-                border-bottom: 4px solid #0000ff;
-                padding: 1rem;
-            }
-            
-            .nav-menu {
-                flex-direction: row;
-                flex-wrap: wrap;
-            }
-            
-            .main-title {
-                font-size: 2rem;
-            }
-        }
-
-        /* Typing cursor animation */
-        .cursor {
-            animation: blink 1s infinite;
-            color: #0000ff;
-        }
-
-        @keyframes blink {
-            0%, 50% { opacity: 1; }
-            51%, 100% { opacity: 0; }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="desktop">
@@ -269,13 +14,13 @@
                     <div class="logo">CK</div>
                     <ul class="nav-menu">
                         <li class="nav-item">
-                            <a href="#" class="nav-link active" data-section="about">About</a>
+                            <a href="index.html" class="nav-link active">About</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link" data-section="projects">Projects</a>
+                            <a href="projects.html" class="nav-link">Projects</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link" data-section="playground">Playground</a>
+                            <a href="playground.html" class="nav-link">Playground</a>
                         </li>
                     </ul>
                 </nav>
@@ -289,73 +34,13 @@
                     </div>
                     
                     <div class="content-area">
-                        <section id="about" class="content-section active">
+                        <section id="about">
                             <h1 class="main-title" id="helloWorldText"></h1>
                             <div class="main-description">
-                                 Thanks for stopping by! My name is Caroline Kerr, I'm a senior Computer Engineering at Georgia Tech, specializing in Computing Hardware & Emerging Architectures and Distributed Systems & Software Design. I’ve spent a lot of time exploring roles across software, embedded systems, codesign, architecture, and verification. 
+                                 Thanks for stopping by! My name is Caroline Kerr, I'm a senior Computer Engineering at Georgia Tech, specializing in Computing Hardware & Emerging Architectures and Distributed Systems & Software Design. I've spent a lot of time exploring roles across software, embedded systems, codesign, architecture, and verification. 
                                 <br><br>
-                                 When I'm out of the lab, I love to travel, hike, paint, cook, and sew!
+                                 When I'm out of the lab, I love to travel, hike, paint, cook, and sew!
                                 <span class="cursor">|</span>
-                            </div>
-                        </section>
-                        
-                        <section id="projects" class="content-section">
-                            <h1 class="main-title">Projects</h1>
-                            <div class="project-grid">
-                                <div class="project-card">
-                                    <div class="project-title">UAV Modeling with Parallel Computing</div>
-                                    <div class="project-tech">C/C++, OpenGL, MPI, CUDA</div>
-                                    <div class="project-description">
-                                        Implemented HPC solution using 16 MPI processes to synchronously calculate and transform 16 UAV's flight trajectory using GPU computing.
-                                    </div>
-                                </div>
-                                
-                                <div class="project-card">
-                                    <div class="project-title">RTL Processor with Expanded Memory</div>
-                                    <div class="project-tech">Verilog, Assembly, ModelSim, Xilinx</div>
-                                    <div class="project-description">
-                                        Designed and implemented single-cycle processor using Verilog RTL with expanded memory module to support RISC-V.
-                                    </div>
-                                </div>
-                                
-                                <div class="project-card">
-                                    <div class="project-title">Elements Embedded Video Game</div>
-                                    <div class="project-tech">C/C++, ARM LPC1768 Microcontroller</div>
-                                    <div class="project-description">
-                                        Programmed interactive game & controller on LPC1768. Interfaced with navigation switches, buttons, IMU sensor tilt controls via SPI protocol.
-                                    </div>
-                                </div>
-                                
-                                <div class="project-card">
-                                    <div class="project-title">Micro-Servo FPGA Peripheral</div>
-                                    <div class="project-tech">Assembly, VHDL, Intel DE-10 FPGA</div>
-                                    <div class="project-description">
-                                        Utilized Intel DE10-Standard FPGA to design peripheral controlling Micro-Servo motor via PWM with three user controlled modes.
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-                        
-                        <section id="playground" class="content-section">
-                            <h1 class="main-title">Playground</h1>
-                            <div class="playground-container">
-                                <div class="demo-box">
-                                    <h3 style="margin-bottom: 1rem; color: #0000ff;">Interactive Demos</h3>
-                                    <button class="demo-button" onclick="runDemo1()">Binary Converter</button>
-                                    <button class="demo-button" onclick="runDemo2()">Color Generator</button>
-                                    <button class="demo-button" onclick="runDemo3()">Random Quote</button>
-                                    <div id="demo-output" style="margin-top: 1rem; min-height: 50px; color: #0000ff;"></div>
-                                </div>
-                                
-                                <div class="demo-box">
-                                    <h3 style="margin-bottom: 1rem; color: #0000ff;">Contact Information</h3>
-                                    <p style="color: #0000ff; line-height: 1.5;">
-                                        📧 ckerr32@gatech.edu<br>
-                                        📱 (610) 312-6887<br>
-                                        💼 <a href="https://www.linkedin.com/in/caroline-j-kerr/" target="_blank" style="color: #0000ff;">LinkedIn Profile</a><br>
-                                        📍 Atlanta, GA
-                                    </p>
-                                </div>
                             </div>
                         </section>
                     </div>
@@ -391,55 +76,10 @@
             setTimeout(type, 500);
         }
 
-        // Navigation functionality
+        // Initialize typing effect when page loads
         document.addEventListener('DOMContentLoaded', function() {
             typeWriter();
-            
-            const navLinks = document.querySelectorAll('.nav-link');
-            const sections = document.querySelectorAll('.content-section');
-            
-            navLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    
-                    navLinks.forEach(nav => nav.classList.remove('active'));
-                    sections.forEach(section => section.classList.remove('active'));
-                    
-                    this.classList.add('active');
-                    
-                    const targetSection = this.getAttribute('data-section');
-                    document.getElementById(targetSection).classList.add('active');
-                });
-            });
         });
-
-        // Playground demo functions
-        function runDemo1() {
-            const num = Math.floor(Math.random() * 256);
-            const binary = num.toString(2).padStart(8, '0');
-            document.getElementById('demo-output').innerHTML = 
-                `<strong>Binary Converter:</strong><br>Decimal: ${num} → Binary: ${binary}`;
-        }
-
-        function runDemo2() {
-            const colors = ['#FF6B6B', '#4ECDC4', '#45B7D1', '#96CEB4', '#FFEAA7', '#DDA0DD', '#98D8C8'];
-            const randomColor = colors[Math.floor(Math.random() * colors.length)];
-            document.getElementById('demo-output').innerHTML = 
-                `<strong>Random Color:</strong><br><div style="width: 100px; height: 50px; background: ${randomColor}; margin: 10px auto; border: 2px solid #0000ff;"></div>Hex: ${randomColor}`;
-        }
-
-        function runDemo3() {
-            const quotes = [
-                "The best way to predict the future is to invent it. - Alan Kay",
-                "Any sufficiently advanced technology is indistinguishable from magic. - Arthur C. Clarke",
-                "The computer was born to solve problems that did not exist before. - Bill Gates",
-                "Hardware is easy to protect: lock it in a room, chain it to a desk, or buy a spare. - Schneier",
-                "Software is a gas; it expands to fill its container. - Nathan Myhrvold"
-            ];
-            const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
-            document.getElementById('demo-output').innerHTML = 
-                `<strong>Engineering Quote:</strong><br><em>"${randomQuote}"</em>`;
-        }
     </script>
 </body>
 </html>

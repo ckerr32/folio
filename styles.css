@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Source Code Pro', 'Courier New', monospace;
+    background: #F8EDEA;
+    color: #0000ff;
+    overflow: hidden;
+    height: 100vh;
+}
+
+/* Desktop Environment */
+.desktop {
+    width: 100vw;
+    height: 100vh;
+    background: #F8EDEA;
+    position: relative;
+    padding: 20px;
+}
+
+/* Main Window */
+.window {
+    width: 100%;
+    height: 100%;
+    background: #F8EDEA;
+    border: 4px solid #0000ff;
+    display: flex;
+    flex-direction: column;
+}
+
+.window-content {
+    flex: 1;
+    display: flex;
+    background: #F8EDEA;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 200px;
+    background: #F8EDEA;
+    border-right: 4px solid #0000ff;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+}
+
+.logo {
+    width: 80px;
+    height: 80px;
+    background: #0000ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 700;
+    font-family: 'Source Code Pro', monospace;
+    color: #C1FF5D;
+    margin-bottom: 1rem;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.nav-item {
+    margin: 0;
+}
+
+.nav-link {
+    display: block;
+    padding: 0.8rem 1rem;
+    background: #0000ff;
+    text-decoration: none;
+    color: #F8EDEA;
+    font-weight: 600;
+    font-family: 'Source Code Pro', monospace;
+    cursor: pointer;
+    transition: all 0.1s ease;
+    text-align: left;
+}
+
+.nav-link:hover {
+    background: #C1FF5D;
+    color: #0000ff;
+}
+
+.nav-link.active {
+    background: #0000ff;
+    color: #F8EDEA;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    overflow-y: auto;
+    background: #F8EDEA;
+    display: flex;
+    flex-direction: column;
+}
+
+.binary-header {
+    background: #F8EDEA;
+    color: #0000ff;
+    padding: 0.5rem;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 18px;
+    line-height: 1.4;
+    overflow: hidden;
+    white-space: nowrap;
+    border-bottom: 4px solid #0000ff;
+}
+
+.content-area {
+    flex: 1;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-title {
+    font-size: 3rem;
+    font-weight: 700;
+    font-family: 'Source Code Pro', monospace;
+    color: #0000ff;
+    margin-bottom: 2rem;
+}
+
+.main-description {
+    font-size: 1.1rem;
+    font-family: 'Source Code Pro', monospace;
+    color: #0000ff;
+    line-height: 1.6;
+    max-width: 600px;
+}
+
+/* Project Cards */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.project-card {
+    background: #F8EDEA;
+    border: 2px solid #0000ff;
+    padding: 1.5rem;
+}
+
+.project-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    font-family: 'Source Code Pro', monospace;
+    color: #0000ff;
+    margin-bottom: 0.5rem;
+}
+
+.project-tech {
+    color: #666;
+    font-size: 0.9rem;
+    font-family: 'Source Code Pro', monospace;
+    margin-bottom: 1rem;
+}
+
+.project-description {
+    line-height: 1.5;
+    font-family: 'Source Code Pro', monospace;
+    color: #0000ff;
+}
+
+/* Playground specific styles */
+.playground-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.demo-box {
+    background: #F8EDEA;
+    border: 2px solid #0000ff;
+    padding: 2rem;
+    text-align: center;
+}
+
+.demo-button {
+    background: #0000ff;
+    color: #F8EDEA;
+    border: none;
+    padding: 1rem 2rem;
+    font-family: 'Source Code Pro', monospace;
+    font-weight: 600;
+    cursor: pointer;
+    margin: 0.5rem;
+}
+
+.demo-button:hover {
+    background: #C1FF5D;
+    color: #0000ff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .desktop {
+        padding: 10px;
+    }
+    
+    .window-content {
+        flex-direction: column;
+    }
+    
+    .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 4px solid #0000ff;
+        padding: 1rem;
+    }
+    
+    .nav-menu {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    .main-title {
+        font-size: 2rem;
+    }
+}
+
+/* Typing cursor animation */
+.cursor {
+    animation: blink 1s infinite;
+    color: #0000ff;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}

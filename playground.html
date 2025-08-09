@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playground - Caroline J. Kerr</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="desktop">
+        <div class="window">
+            <div class="window-content">
+                <nav class="sidebar">
+                    <div class="logo">CK</div>
+                    <ul class="nav-menu">
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="projects.html" class="nav-link">Projects</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="playground.html" class="nav-link active">Playground</a>
+                        </li>
+                    </ul>
+                </nav>
+                
+                <main class="main-content">
+                    <div class="binary-header">
+                        <div>0110100001100101011011000110110001101111001000000111011101101111011100100110110001100100001000000110001101101111011011010111000001110101011101000110010101110010001000000110010101101110011001110110100101101110011001010110010101110010001000000110100001100001011100100110010001110111011000010111001001100101</div>
+                        <div>0111001001101111011001110111001001100001011011010110110101101001011011100110011100100000011000010111001001100011011010000110100101110100011001010110001101110100011101010111001001100101001000000110000101101001001000000110110101100001011000110110100001101001011011100110010100100000011011000110010101100001</div>
+                        <div>0111001001101110011010010110111001100111001000000110100001100001011100100110010001110111011000010111001001100101001000000110100101101110011101000110010101100111011100100110000101110100011010010110111101101110001000000110010101101101011000100110010101100100011001000110010101100100001000000111001101111001</div>
+                        <div>0111001001110011011101000110010101101101011100110010000001100100011001010111001101101001011001110110111000100000011001100111000001100111011000010010000001110000011100100110111101100011011001010111001101110011011011110111001000100000011000010111001001100011011010000110100101110100011001010110001101110100</div>
+                    </div>
+                    
+                    <div class="content-area">
+                        <section id="playground">
+                            <h1 class="main-title">Playground</h1>
+                            <div class="playground-container">
+                                <div class="demo-box">
+                                    <h3 style="margin-bottom: 1rem; color: #0000ff;">Interactive Demos</h3>
+                                    <button class="demo-button" onclick="runDemo1()">Binary Converter</button>
+                                    <button class="demo-button" onclick="runDemo2()">Color Generator</button>
+                                    <button class="demo-button" onclick="runDemo3()">Random Quote</button>
+                                    <div id="demo-output" style="margin-top: 1rem; min-height: 50px; color: #0000ff;"></div>
+                                </div>
+                                
+                                <div class="demo-box">
+                                    <h3 style="margin-bottom: 1rem; color: #0000ff;">Contact Information</h3>
+                                    <p style="color: #0000ff; line-height: 1.5;">
+                                        📧 ckerr32@gatech.edu<br>
+                                        📱 (610) 312-6887<br>
+                                        💼 <a href="https://www.linkedin.com/in/caroline-j-kerr/" target="_blank" style="color: #0000ff;">LinkedIn Profile</a><br>
+                                        📍 Atlanta, GA
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Playground demo functions
+        function runDemo1() {
+            const num = Math.floor(Math.random() * 256);
+            const binary = num.toString(2).padStart(8, '0');
+            document.getElementById('demo-output').innerHTML = 
+                `<strong>Binary Converter:</strong><br>Decimal: ${num} → Binary: ${binary}`;
+        }
+
+        function runDemo2() {
+            const colors = ['#FF6B6B', '#4ECDC4', '#45B7D1', '#96CEB4', '#FFEAA7', '#DDA0DD', '#98D8C8'];
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            document.getElementById('demo-output').innerHTML = 
+                `<strong>Random Color:</strong><br><div style="width: 100px; height: 50px; background: ${randomColor}; margin: 10px auto; border: 2px solid #0000ff;"></div>Hex: ${randomColor}`;
+        }
+
+        function runDemo3() {
+            const quotes = [
+                "The best way to predict the future is to invent it. - Alan Kay",
+                "Any sufficiently advanced technology is indistinguishable from magic. - Arthur C. Clarke",
+                "The computer was born to solve problems that did not exist before. - Bill Gates",
+                "Hardware is easy to protect: lock it in a room, chain it to a desk, or buy a spare. - Schneier",
+                "Software is a gas; it expands to fill its container. - Nathan Myhrvold"
+            ];
+            const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+            document.getElementById('demo-output').innerHTML = 
+                `<strong>Engineering Quote:</strong><br><em>"${randomQuote}"</em>`;
+        }
+    </script>
+</body>
+</html>
